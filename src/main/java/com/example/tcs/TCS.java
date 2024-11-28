@@ -14,6 +14,10 @@ public class TCS {
         books.put("Python",800);
         books.put(".Net",600);
 
+        System.out.println(books);
+
+        //Task is to sort this hashmap based on value
+
         //Convert map to stream
         HashMap<String,Integer> sortedBook = books.entrySet().stream().compare((e1,e2) -> e1.value().compare(e2.value())).collect(Collectors.toMap());
         
