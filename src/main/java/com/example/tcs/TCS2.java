@@ -5,8 +5,7 @@ import java.util.Map;
 
 public class TCS2 {
     public static void main(String[] args) {
-        // Assume that the given array A is A = [1, 2, 2, 0, 1, 0, 0, // 2, 0, 1, 2, 0]
-        // and the expected out in aray format is A = [2, 2, 2, 2, 0, 0, 0, // 0, 0, 1, 1, 1]
+         
 
         // Questions :
         // 1 ,2, 0 digists are only used digits, And We dont need to check it.

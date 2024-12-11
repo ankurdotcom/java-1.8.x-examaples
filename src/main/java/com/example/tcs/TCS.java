@@ -1,7 +1,7 @@
 package com.example.tcs;
 
 import java.util.*;
-import java.util.stream.Collectors;
+// import java.util.stream.Collectors;
 
 public class TCS {
 
@@ -18,24 +18,24 @@ public class TCS {
 
         //Task is to Maintain Insert Order in this map based on key
 
-        Map<String,Integer> booksMaintainInsertOrder = new LinkedHashMap<>();
-        booksMaintainInsertOrder.put("Java",500);
-        booksMaintainInsertOrder.put("HTML",300);
-        booksMaintainInsertOrder.put("CSS",200);
-        booksMaintainInsertOrder.put("Python",800);
-        booksMaintainInsertOrder.put(".Net",600);
+        Map<String,Integer> booksMaintainInsertOrder = new LinkedHashMap<>(books);
+        //booksMaintainInsertOrder.put("Java",500);
+        //booksMaintainInsertOrder.put("HTML",300);
+        //booksMaintainInsertOrder.put("CSS",200);
+        //booksMaintainInsertOrder.put("Python",800);
+        //booksMaintainInsertOrder.put(".Net",600);
 
         System.out.println(booksMaintainInsertOrder);
 
         //Task is to Automatically Sort map based on key
         // In natural Order
 
-        Map<String,Integer> booksMaintainInsertOrder2 = new TreeMap<>();
-        booksMaintainInsertOrder2.put("Java",500);
-        booksMaintainInsertOrder2.put("HTML",300);
-        booksMaintainInsertOrder2.put("CSS",200);
-        booksMaintainInsertOrder2.put("Python",800);
-        booksMaintainInsertOrder2.put(".Net",600);
+        Map<String,Integer> booksMaintainInsertOrder2 = new TreeMap<>(books);
+        //booksMaintainInsertOrder2.put("Java",500);
+        //booksMaintainInsertOrder2.put("HTML",300);
+        //booksMaintainInsertOrder2.put("CSS",200);
+        //booksMaintainInsertOrder2.put("Python",800);
+        //booksMaintainInsertOrder2.put(".Net",600);
 
         System.out.println(booksMaintainInsertOrder2);
 
@@ -45,7 +45,10 @@ public class TCS {
         //Convert map to stream
         //Map<String,Integer> sortedBook = books.entrySet().stream().compare((e1,e2) -> e1.value().compare(e2.value())).collect(Collectors.toMap());
         
-        //System.out.println(sortedBook);
+        Map<String,Integer> sortedBook = new TreeMap<>(Comparator.comparing(books::get));
+        sortedBook.putAll(books);
+
+        System.out.println(sortedBook);
         //Apply Intermediate comparator Based on Price
         //terminal Operation to collection new Values
     }
